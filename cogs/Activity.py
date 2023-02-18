@@ -9,14 +9,16 @@ class Activity(commands.Cog):
         
         self.client.loop.create_task(self.save())
         
-        with open(r'C:\Users\Robert\Desktop\pybot\cogs\json\users.json','r') as f:
+        #with open(r'C:\Users\Robert\Desktop\pybot\cogs\json\users.json','r') as f:
+        with open('cogs/json/users.json','r') as f:
             self.users = json.load(f)
         
     
     async def save(self):
         await self.client.wait_until_ready()
         while not self.client.is_closed():
-            with open(r'C:\Users\Robert\Desktop\pybot\cogs\json\users.json', 'w') as f:
+            #with open(r'C:\Users\Robert\Desktop\pybot\cogs\json\users.json', 'w') as f:
+            with open('cogs/json/users.json', 'w') as f:
                 json.dump(self.users, f, indent=3) 
                 
             await asyncio.sleep(5)

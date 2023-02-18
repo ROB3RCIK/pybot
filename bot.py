@@ -22,7 +22,7 @@ async def on_ready():
     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Shiaanah"))
 
 async def load():
-    for filename in os.listdir(r'C:\Users\Robert\Desktop\pybot\cogs'):
+    for filename in os.listdir('./cogs/'):
         if filename.endswith(".py"):
             await client.load_extension(f"cogs.{filename[:-3]}")
 
