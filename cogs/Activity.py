@@ -3,7 +3,7 @@ from discord.ext import commands
 import json
 import asyncio
 
-class Active(commands.Cog):
+class Activity(commands.Cog):
     def __init__(self,client):
         self.client = client
         
@@ -39,4 +39,4 @@ class Active(commands.Cog):
         self.users[author_id]["CountM"] +=1
         
 async def setup(client):
-    await client.add_cog(Active(client))
+    await client.add_cog(Activity(client))
