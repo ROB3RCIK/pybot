@@ -11,7 +11,7 @@ intents = discord.Intents.all()
 intents.members = True
 intents.messages = True
 
-client = commands.Bot(command_prefix="!", intents=intents)
+client = commands.Bot(command_prefix="/", intents=intents)
 client.remove_command("help")
 
 @client.event

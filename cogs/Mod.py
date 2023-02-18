@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+from discord import app_commands
 
 roblox_words = ['ROBLOX', 'HUGE', 'PSX', 'PSC', 'PET', 'GEM']
 
@@ -9,6 +10,7 @@ class Moderation(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
+        await self.client.tree.sync()
         print("[Bot Shiaanah] Moderation Ready")
  
     @commands.Cog.listener()
@@ -39,12 +41,12 @@ class Moderation(commands.Cog):
     
     @commands.command()
     @commands.has_permissions(manage_messages=True)
-    async def clear(self, ctx, ilosc = 5):
+    async def clear(self, ctx,  ilosc: int = 5):
         await ctx.channel.purge(limit=ilosc+1)
         #await ctx.channel.send(f"Usunięto {ilosc} wiadomości", delete_after=5)
         embed=discord.Embed(title="Sprzątanie", color=0x0000ff)
         embed.add_field(name=f"Usunięto {ilosc} wiadomości", value="", inline=False)
-        await ctx.send(embed=embed, delete_after=5)
+        await ctx.send(embed=embed, delete_after=3)
         
         
         
