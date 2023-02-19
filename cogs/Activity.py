@@ -32,7 +32,7 @@ class Activity(commands.Cog):
         if message.author == self.client.user:
             return
         
-        author_id = str(message.author)
+        author_id = message.author.id
         
         if not author_id in self.users:
             self.users[author_id] = {}

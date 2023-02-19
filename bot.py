@@ -1,11 +1,14 @@
 import discord
 import os
 import asyncio
+from dotenv import load_dotenv
 from discord import channel
 from discord import member
 from discord import guild
 from discord.client import Client
 from discord.ext import commands
+
+load_dotenv()
 
 intents = discord.Intents.all()
 intents.members = True
@@ -29,6 +32,6 @@ async def load():
 async def main():
     async with client:
         await load()
-        await client.start("")
+        await client.start(os.getenv("client_token"))
 
 asyncio.run(main())
