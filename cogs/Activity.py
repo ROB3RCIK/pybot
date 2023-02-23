@@ -25,7 +25,7 @@ class Activity(commands.Cog):
         
     @commands.Cog.listener()
     async def on_ready(self):
-        print("[Bot Shiaanah] Active Ready")
+        print("[Bot Shiianah] Activity Ready")
         
     @commands.Cog.listener()
     async def on_message(self, message):
@@ -36,7 +36,7 @@ class Activity(commands.Cog):
         
         if not author_id in self.users:
             self.users[author_id] = {}
-            self.users[author_id]["CountM"] = 1
+            self.users[author_id]["CountM"] = 0
             
         self.users[author_id]["CountM"] +=1
         

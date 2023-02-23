@@ -48,6 +48,11 @@ class Moderation(commands.Cog):
         embed.add_field(name=f"Usunięto {ilosc} wiadomości", value="", inline=False)
         await ctx.send(embed=embed, delete_after=3)
         
+    @commands.command()   
+    async def hello(self, ctx):
+        log_clear = discord.untils.get(ctx.guild.channels, name="test-bot")
+        if ctx.channel.id==log_clear:
+            await ctx.send("dziala")
         
         
     

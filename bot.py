@@ -19,10 +19,10 @@ client.remove_command("help")
 
 @client.event
 async def on_ready():
-    print("[Bot Shiaanah] Online")
+    print("[Bot Shiianah] Online")
 
-    #await client.change_presence(activity=discord.Streaming(name="Nic", url="https://www.twitch.tv/shiaanah/"))
-    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Shiaanah"))
+    #await client.change_presence(activity=discord.Streaming(name="Nic", url="https://www.twitch.tv/shiianah/"))
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Shiianah"))
 
 async def load():
     for filename in os.listdir('./cogs/'):
